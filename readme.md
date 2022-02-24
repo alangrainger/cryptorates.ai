@@ -1,5 +1,3 @@
-Completely free live crypto rates for Google Sheets and Excel
-
 ## How to set up
 
 There's nothing to install. Just copy and paste one of the formulas below and you're done!
@@ -35,3 +33,9 @@ For Excel, you would go to Data > From Web, and paste the URL above.
 If you want more columns (volume, 24h change, etc), use `full.csv` instead of standard.
 
 Data is updated every 30 minutes. For the standard dataset, it's the top 4000 coins by market cap. For the full dataset, it's the top 2000 coins to keep the import filesize small.
+
+## Comments / questions?
+
+For any issues or questions, please raise them here:
+
+https://github.com/alangrainger/cryptorates.ai/issues
