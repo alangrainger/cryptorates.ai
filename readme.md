@@ -28,7 +28,7 @@ Have a look at this demo portfolio example, or take a copy and make it your own:
 
 ## More info
 
-For Excel, you would go to Data > From Web, and paste the URL above.
+For Excel go to Data > From Web, and paste this URL: https://cryptorates.ai/files/standard.csv
 
 If you want more columns (volume, 24h change, etc), use `full.csv` instead of standard.
 
