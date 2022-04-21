@@ -5,7 +5,7 @@ There's nothing to install. Just copy and paste one of the formulas below and yo
 To get the rate for a coin, use this formula:
 
 ```
-=QUERY(IMPORTDATA("https://cryptorates.ai/files/standard.csv"), "SELECT Col3 WHERE Col1 = 'BTC'", 0)
+=QUERY(IMPORTDATA("https://cryptorates.ai/files/standard.csv", ",", "en_US"), "SELECT Col3 WHERE Col1 = 'BTC'", 0)
 ```
 
 You can replace the "BTC" with a cell reference (eg `"SELECT Col3 WHERE Col1='" & A1 & "'"`).
@@ -13,7 +13,7 @@ You can replace the "BTC" with a cell reference (eg `"SELECT Col3 WHERE Col1='" 
 Alternatively you can import all rates at once, and use `VLOOKUP` or `INDEX` `MATCH` on your other sheets to look up the rates. Create a blank sheet and put this into A1:
 
 ```
-=IMPORTDATA("https://cryptorates.ai/files/standard.csv")
+=IMPORTDATA("https://cryptorates.ai/files/standard.csv", ",", "en_US")
 ```
 
 ## Changing currency - EUR, AUD, GBP, etc
@@ -24,7 +24,7 @@ Rates are in USD, so convert to any other currency using `GOOGLEFINANCE`. See th
 
 Have a look at this demo portfolio example, or take a copy and make it your own:
 
-👉 [Open the demo spreadsheet](https://docs.google.com/spreadsheets/d/1nu7EYtzxrizrypDvnrtz5FrfTBDpFLkjk7Lw80blUEc/edit?usp=sharing) 👈
+[Open the demo spreadsheet](https://docs.google.com/spreadsheets/d/1nu7EYtzxrizrypDvnrtz5FrfTBDpFLkjk7Lw80blUEc/edit?usp=sharing)
 
 ## More info
 
