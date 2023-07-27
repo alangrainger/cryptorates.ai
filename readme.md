@@ -8,7 +8,7 @@ To get the rate for a coin, use this formula:
 =QUERY(IMPORTDATA("https://cryptorates.ai/files/standard.csv", ",", "en_US"), "SELECT Col3 WHERE Col1 = 'BTC'", 0)
 ```
 
-You can replace the "BTC" with a cell reference (eg `"SELECT Col3 WHERE Col1='" & A1 & "'"`).
+You can replace the `BTC` with a cell reference (eg `"SELECT Col3 WHERE Col1='" & A1 & "'"`).
 
 Alternatively you can import all rates at once, and use `VLOOKUP` or `INDEX` `MATCH` on your other sheets to look up the rates. Create a blank sheet and put this into A1:
 
@@ -18,13 +18,11 @@ Alternatively you can import all rates at once, and use `VLOOKUP` or `INDEX` `MA
 
 ## Changing currency - EUR, AUD, GBP, etc
 
-Rates are in USD, so convert to any other currency using `GOOGLEFINANCE`. See the demo sheet for an example of how to do this.
+Rates are in USD, so convert to any other currency using `GOOGLEFINANCE`, e.g.:
 
-## Live demo
-
-Have a look at this demo portfolio example, or take a copy and make it your own:
-
-[Open the demo spreadsheet](https://docs.google.com/spreadsheets/d/1nu7EYtzxrizrypDvnrtz5FrfTBDpFLkjk7Lw80blUEc/edit?usp=sharing)
+```
+=QUERY(IMPORTDATA("https://cryptorates.ai/files/standard.csv", ",", "en_US"), "SELECT Col3 WHERE Col1 = 'BTC'", 0) * GOOGLEFINANCE("USDEUR")
+```
 
 ## More info
 
@@ -32,7 +30,13 @@ For Excel go to Data > From Web, and paste this URL: https://cryptorates.ai/file
 
 If you want more columns (volume, 24h change, etc), use `full.csv` instead of standard.
 
-Data is updated every 30 minutes. For the standard dataset, it's the top 4000 coins by market cap. For the full dataset, it's the top 2000 coins to keep the import filesize small.
+Data is updated every 30 minutes and includes the top 5000 coins by market cap
+
+To output the time the data was fetched, use this formula:
+
+```
+=QUERY(IMPORTDATA("https://cryptorates.ai/files/standard.csv", ",", "en_US"), "SELECT Col2 WHERE Col1 = 'Updated at'", 0)
+```
 
 ## Comments / questions?
 
